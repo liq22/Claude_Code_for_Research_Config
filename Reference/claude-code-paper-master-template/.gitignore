@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+plots/
+data/*.tmp
+data/*.cache
