@@ -1,0 +1,105 @@
+{
+  "scenario_name": "Template-Based Research Workflow Test",
+  "scenario_id": "07",
+  "description": "测试将仓库作为研究模板的完整工作流，包括状态恢复、增量更新和持续写作",
+  "research_topic": "Multimodal Learning for Scientific Discovery",
+  "objectives": [
+    "验证模板复制和项目初始化流程",
+    "测试研究上下文恢复和缓存利用",
+    "评估基于现有Paper.md的增量写作能力",
+    "验证版本管理和研究状态追踪",
+    "测试研究成果导出和打包功能"
+  ],
+  "expected_outcomes": {
+    "template_copy_success": true,
+    "context_recovery_rate": ">= 90%",
+    "incremental_updates": ">= 5",
+    "version_consistency": ">= 95%",
+    "research_continuity_score": ">= 8.5"
+  },
+  "test_steps": [
+    {
+      "step": 1,
+      "description": "初始化新研究项目",
+      "actions": [
+        "复制模板到测试目录",
+        "设置研究主题和元数据",
+        "创建项目配置文件"
+      ],
+      "expected_duration": "30s"
+    },
+    {
+      "step": 2,
+      "description": "恢复研究上下文",
+      "actions": [
+        "从缓存查询相关研究",
+        "分析历史研究模式",
+        "识别研究断点和空白"
+      ],
+      "expected_duration": "60s"
+    },
+    {
+      "step": 3,
+      "description": "增量文献更新",
+      "actions": [
+        "搜索最新相关文献",
+        "更新知识图谱",
+        "排除已有文献重复"
+      ],
+      "expected_duration": "120s"
+    },
+    {
+      "step": 4,
+      "description": "继续论文写作",
+      "actions": [
+        "基于模板扩展Introduction",
+        "增强Method部分",
+        "添加实验结果",
+        "更新Discussion"
+      ],
+      "expected_duration": "300s"
+    },
+    {
+      "step": 5,
+      "description": "版本管理和追踪",
+      "actions": [
+        "创建版本快照",
+        "生成变更日志",
+        "缓存研究会话"
+      ],
+      "expected_duration": "45s"
+    },
+    {
+      "step": 6,
+      "description": "质量检查与优化",
+      "actions": [
+        "检查模板一致性",
+        "验证引用完整性",
+        "运行质量门控",
+        "生成最终摘要"
+      ],
+      "expected_duration": "90s"
+    },
+    {
+      "step": 7,
+      "description": "导出研究成果",
+      "actions": [
+        "生成完整论文",
+        "导出bibliography",
+        "创建研究包",
+        "生成完成报告"
+      ],
+      "expected_duration": "60s"
+    }
+  ],
+  "metrics_to_collect": [
+    "template_initialization_time",
+    "context_recovery_success_rate",
+    "incremental_updates_count",
+    "version_management_efficiency",
+    "writing_continuity_score",
+    "quality_gate_pass_rate",
+    "research_package_completeness",
+    "overall_workflow_satisfaction"
+  ]
+}
