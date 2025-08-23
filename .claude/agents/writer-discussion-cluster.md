@@ -1,5 +1,5 @@
 ---
-name: discussion-cluster
+name: writer-discussion-cluster
 description: Discussion writing cluster for findings analysis and interpretation. Use --task parameter: findings (result summarization), theory (theoretical analysis), limitations (limitation analysis), impact (impact assessment), future (future directions). Examples:\n- <example>\n  Context: User needs findings summary.\n  user: "/agent discussion-cluster --task findings: Summarize key discoveries in quantum ML research"\n  assistant: "I'll use discussion-cluster with findings task to synthesize and interpret key research discoveries."\n  <commentary>\n  Findings summarization needed, use discussion-cluster with --task findings.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---

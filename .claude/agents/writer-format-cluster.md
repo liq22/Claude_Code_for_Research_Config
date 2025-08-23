@@ -1,5 +1,5 @@
 ---
-name: format-cluster
+name: writer-format-cluster
 description: Format and presentation cluster for paper formatting and style. Use --task parameter: abstract (abstract creation), title (title optimization), structure (organization), language (language polishing), statements (acknowledgments/declarations). Examples:\n- <example>\n  Context: User needs abstract for paper.\n  user: "/agent format-cluster --task abstract: Create Nature-style abstract for quantum ML paper"\n  assistant: "I'll use format-cluster with abstract task to create compelling Nature-format abstract."\n  <commentary>\n  Abstract creation needed, use format-cluster with --task abstract.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---

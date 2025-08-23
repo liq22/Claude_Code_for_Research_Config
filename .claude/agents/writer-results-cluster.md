@@ -1,5 +1,5 @@
 ---
-name: results-cluster
+name: writer-results-cluster
 description: Results writing cluster for experimental results and evaluation. Use --task parameter: experiment (experimental design), data (data presentation), charts (figure interpretation), comparison (comparative analysis), significance (statistical validation). Examples:\n- <example>\n  Context: User needs experimental setup description.\n  user: "/agent results-cluster --task experiment: Design evaluation for federated learning privacy"\n  assistant: "I'll use results-cluster with experiment task to create comprehensive experimental design."\n  <commentary>\n  Experimental design needed, use results-cluster with --task experiment.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---

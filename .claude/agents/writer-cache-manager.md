@@ -1,5 +1,5 @@
 ---
-name: cache-manager
+name: writer-cache-manager
 description: Intelligent cache management for Claude thinking, research sessions, and agent executions. Use for cache operations, performance analytics, and workflow optimization. Examples:\n- <example>\n  Context: User wants to query cached research.\n  user: "Find similar research sessions about machine learning"\n  assistant: "I'll use the cache-manager agent to search cached research sessions and provide relevant matches."\n  <commentary>\n  Cache searching and analysis is needed, perfect for cache-manager agent.\n  </commentary>\n</example>
 tools: Task, Bash, Read, Write, Edit, WebSearch
 ---

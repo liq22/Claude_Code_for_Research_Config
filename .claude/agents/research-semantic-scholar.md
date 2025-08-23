@@ -1,5 +1,5 @@
 ---
-name: semantic-scholar-api
+name: research-semantic-scholar
 description: Semantic Scholar API integration for accessing 200M+ papers with advanced search and analysis capabilities. Provides paper search, citation analysis, author tracking, and trend identification. Examples:\n- <example>\n  Context: User needs comprehensive paper search.\n  user: "Search Semantic Scholar for recent transformer architecture papers"\n  assistant: "I'll use the semantic-scholar-api agent to search for recent transformer papers with detailed metadata."\n  <commentary>\n  Semantic Scholar search needed, perfect for semantic-scholar-api agent.\n  </commentary>\n</example>
 tools: Task, WebSearch, Read, Write, Bash
 ---
