@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-08-24T09:10:59.711139",
+  "total_tests": 7,
+  "passed": 5,
+  "failed": 2,
+  "success_rate": 0.7142857142857143,
+  "tests": [
+    {
+      "name": "Cache System Init",
+      "passed": true,
+      "details": "System initialized correctly"
+    },
+    {
+      "name": "Auto Hook",
+      "passed": true,
+      "details": "Session cached: e0b70659-0504-496c-94d0-b6a19f0016b4"
+    },
+    {
+      "name": "Research Session",
+      "passed": true,
+      "details": "Session cached: e1d8a99c-60ec-49fd-9f27-90587b0e513c"
+    },
+    {
+      "name": "Agent Execution",
+      "passed": true,
+      "details": "Execution cached: b8a92d1c-4b4f-4784-9e0a-b31ce54731d8"
+    },
+    {
+      "name": "Cache Querying",
+      "passed": false,
+      "details": "'CacheQueryEngine' object has no attribute 'analyze_research_patterns'"
+    },
+    {
+      "name": "Cache Persistence",
+      "passed": false,
+      "details": "No cache files were created"
+    },
+    {
+      "name": "Cache Cleanup",
+      "passed": true,
+      "details": "Cleanup ran successfully"
+    }
+  ]
+}
