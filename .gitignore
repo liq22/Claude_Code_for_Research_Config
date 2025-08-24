@@ -24,17 +24,17 @@
 !.claude/goals/README.md
 
 # Execution logs (keep structure, ignore content)
-logs/executions/*
-logs/sessions/*
-logs/agents/*
-logs/analytics/*
-!logs/*/.gitkeep
-!logs/README.md
+src/logs/executions/*
+src/logs/sessions/*
+src/logs/agents/*
+src/logs/analytics/*
+!src/logs/*/.gitkeep
+!src/logs/README.md
 
 # Cache system (ignore generated content, keep structure)
-dev/cache/*
-!dev/cache/.gitkeep
-!dev/cache/README.md
+src/dev/cache/*
+!src/dev/cache/.gitkeep
+!src/dev/cache/README.md
 
 # ============================================================================
 # 📁 USER WORKSPACE (keep structure, ignore user content)
@@ -184,9 +184,9 @@ Thumbs.db
 *.swp
 *.swo
 
-# Log files (but keep structured logs in logs/ directory)
+# Log files (but keep structured logs in src/logs/ directory)
 *.log
-!logs/README.md
+!src/logs/README.md
 
 # Backup files
 *.backup
@@ -278,15 +278,15 @@ monitoring/
 # The following files and directories are KEPT for template functionality:
 # 
 # ✅ ALWAYS INCLUDED:
-# - templates/ (all academic paper templates)
-# - examples/ (all usage examples)  
+# - src/templates/ (all academic paper templates)
+# - src/examples/ (all usage examples)  
 # - workspace/README.md (user guide)
 # - .claude/agents/ (agent definitions)
 # - .claude/config.yaml (system configuration)
 # - .claude/hooks/ (execution hooks)
-# - QUICKSTART.md (quick start guide)
+# - src/docs/ (documentation files)
 # - README.md (main documentation)
-# - CLAUDE.md (usage instructions)
+# - config/ (configuration files)
 # 
 # ❌ ALWAYS IGNORED:
 # - User's personal research files

@@ -48,11 +48,11 @@ REQUIRED_DIRECTORIES = [
     "workspace/papers",
     "workspace/data", 
     "workspace/figures",
-    "logs/executions",
-    "logs/sessions",
-    "logs/agents",
-    "logs/analytics",
-    "dev/cache",
+    "src/logs/executions",
+    "src/logs/sessions",
+    "src/logs/agents",
+    "src/logs/analytics",
+    "src/dev/cache",
 ]
 
 # ============================================================================

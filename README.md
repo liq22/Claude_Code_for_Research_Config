@@ -2,6 +2,12 @@
 
 一键在Claude Code中启动Nature级别论文写作系统。无需编程，只需对话。
 
+## 📁 项目结构
+- **workspace/** - 您的研究工作空间（论文、数据、图表）
+- **src/** - 系统源代码和资源（示例、模板、脚本）
+- **config/** - 配置文件（requirements、环境变量）
+- **.claude/** - Claude系统配置
+
 ## ✨ 这是什么？
 
 这是一个**Claude Code配置模板**，让您通过自然语言对话即可：
@@ -118,10 +124,10 @@ Claude: [统计分析、可视化、结果写作]
 
 ## 📚 了解更多
 
-- **📖 详细使用教程** - 查看 [CLAUDE.md](CLAUDE.md)
-- **🎯 常见问题解答** - 查看 [docs/FAQ.md](docs/FAQ.md)  
-- **💡 示例论文模板** - 查看 [examples/](examples/) 目录
-- **🔧 系统配置说明** - 查看 [.claude/](claude/) 目录
+- **📖 详细使用教程** - 查看 [src/docs/CLAUDE.md](src/docs/CLAUDE.md)
+- **🎯 快速开始指南** - 查看 [src/docs/QUICKSTART.md](src/docs/QUICKSTART.md)  
+- **💡 示例论文模板** - 查看 [src/examples/](src/examples/) 目录
+- **🔧 系统配置说明** - 查看 [.claude/](.claude/) 目录
 
 ## 🚀 立即开始
 
