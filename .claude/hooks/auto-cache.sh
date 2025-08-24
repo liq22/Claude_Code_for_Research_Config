@@ -7,7 +7,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 CACHE_SCRIPT="$PROJECT_DIR/src/scripts/cache/auto_cache_hook.py"
-CACHE_PID_FILE="$PROJECT_DIR/dev/cache/cache.pid"
+CACHE_PID_FILE="$PROJECT_DIR/src/dev/cache/cache.pid"
 
 # Function to start cache system
 start_cache() {
@@ -23,7 +23,7 @@ start_cache() {
 
     # Start cache system in background
     cd "$PROJECT_DIR"
-    python "$CACHE_SCRIPT" > dev/cache/auto_cache.log 2>&1 &
+    python "$CACHE_SCRIPT" > src/dev/cache/auto_cache.log 2>&1 &
     local cache_pid=$!
     
     # Save PID for later cleanup
@@ -34,7 +34,7 @@ start_cache() {
     echo "   - Claude thinking processes"
     echo "   - Research sessions"
     echo "   - Agent executions"
-    echo "📁 Cache directory: $PROJECT_DIR/dev/cache/"
+    echo "📁 Cache directory: $PROJECT_DIR/src/dev/cache/"
     
     return 0
 }

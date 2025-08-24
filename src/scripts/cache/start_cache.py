@@ -58,7 +58,7 @@ class CacheSystemStarter:
         print("🔧 Initializing cache system environment...")
         
         # Create cache directories
-        cache_base = self.project_root / self.config.get("cache", {}).get("base_path", "dev/cache")
+        cache_base = self.project_root / self.config.get("cache", {}).get("base_path", "src/dev/cache")
         for cache_type in self.config.get("cache", {}).get("enabled_types", []):
             cache_dir = cache_base / {
                 "thinking": "claude_thinking",

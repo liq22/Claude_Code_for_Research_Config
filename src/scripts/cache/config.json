@@ -10,7 +10,7 @@
       "research", 
       "agent"
     ],
-    "base_path": "dev/cache",
+    "base_path": "src/dev/cache",
     "compression": {
       "enabled": true,
       "algorithm": "gzip",
@@ -86,7 +86,7 @@
   },
   "logging": {
     "level": "INFO",
-    "file": "dev/cache/auto_cache.log",
+    "file": "src/dev/cache/auto_cache.log",
     "max_size_mb": 10,
     "backup_count": 3,
     "console_output": false
