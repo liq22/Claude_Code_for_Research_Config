@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# Claude Code Auto-Cache Hook
-# Automatically starts cache system for Claude thinking and execution recording
+# Claude Code Simple Auto-Cache Hook
+# Automatically starts simplified cache system (timestamp + content only)
 #
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-CACHE_SCRIPT="$PROJECT_DIR/src/scripts/cache/auto_cache_hook.py"
+CACHE_SCRIPT="$PROJECT_DIR/src/scripts/cache/start_cache.py"
 CACHE_PID_FILE="$PROJECT_DIR/src/dev/cache/cache.pid"
 
 # Function to start cache system
@@ -23,14 +23,14 @@ start_cache() {
 
     # Start cache system in background
     cd "$PROJECT_DIR"
-    python "$CACHE_SCRIPT" > src/dev/cache/auto_cache.log 2>&1 &
+    python "$CACHE_SCRIPT" --daemon > src/dev/cache/cache.log 2>&1 &
     local cache_pid=$!
     
     # Save PID for later cleanup
     echo "$cache_pid" > "$CACHE_PID_FILE"
     
-    echo "✅ Auto-cache system started with PID: $cache_pid"
-    echo "📊 Caching enabled for:"
+    echo "✅ Simple auto-cache system started with PID: $cache_pid"
+    echo "📊 Simple caching enabled (timestamp + content only):"
     echo "   - Claude thinking processes"
     echo "   - Research sessions"
     echo "   - Agent executions"

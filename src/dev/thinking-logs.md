@@ -186,9 +186,9 @@ The enhanced system will transform from a writing-focused tool to a comprehensiv
 
 **完成组件**:
 1. **intelligent-cache-manager.md** - 智能缓存管理Agent
-2. **cache_system.py** - 核心缓存管理系统 
-3. **cache_query.py** - 智能检索和查询引擎
-4. **auto_cache_hook.py** - 自动缓存捕获钩子
+2. **cache.py** - 简化缓存管理系统 (只保存时间戳+内容)
+3. **cache_query.py** - 简单文本搜索和查询引擎
+4. **auto_hook.py** - 自动缓存捕获钩子
 5. **CLAUDE.md缓存命令** - 完整的命令行界面文档
 
 ### 📊 缓存能力总览
@@ -262,9 +262,10 @@ dev/cache/                        # 缓存根目录
 └── auto_cache.log               # 自动缓存系统日志
 
 scripts/cache/                    # 缓存管理脚本
-├── cache_system.py              # 核心缓存系统 (800+ lines)
-├── cache_query.py               # 智能查询引擎 (600+ lines)
-└── auto_cache_hook.py           # 自动捕获钩子 (500+ lines)
+├── cache.py                     # 简化缓存系统 (~220 lines)
+├── cache_query.py               # 简单查询引擎 (~156 lines)
+├── auto_hook.py                 # 自动捕获钩子 (~190 lines)
+└── start_cache.py               # 系统启动器 (~181 lines)
 
 agents/infrastructure/
 └── intelligent-cache-manager.md # 缓存管理Agent (225 lines)

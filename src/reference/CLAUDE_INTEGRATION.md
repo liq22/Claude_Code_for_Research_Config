@@ -88,7 +88,7 @@ graph TD
 ### 1. 缓存系统集成
 ```bash
 # 缓存系统在Claude Code环境中的使用
-python scripts/cache/cache_query.py search --query "neural networks"
+python src/scripts/cache/cache_query.py search --query "neural networks"
 
 # 通过agent调用缓存
 /agent cache-manager: "找到与当前研究相似的历史会话"
@@ -234,7 +234,7 @@ access_control:
 /agent cache-manager: "检查agent系统健康状态"
 
 # 缓存系统问题
-python scripts/cache/cache_system.py  # 运行系统检查
+# Cache system check commands are now available through:
 
 # 清理和重置
 /agent cache-manager: "执行系统清理和优化"
@@ -243,7 +243,7 @@ python scripts/cache/cache_system.py  # 运行系统检查
 ### 系统维护
 ```bash
 # 定期维护脚本
-python scripts/cache/cache_query.py patterns --type system_health
+python src/scripts/cache/cache_query.py stats
 
 # 性能优化
 /agent cache-manager: "执行定期性能优化"
