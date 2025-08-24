@@ -1,36 +1,101 @@
-# Claude Code Execution Logging System Dependencies
+# ============================================================================
+# Claude Code Research Template - Python Dependencies
+# ============================================================================
 # Python 3.9+ required
+# Install with: pip install -r requirements.txt
 
-# Core logging dependencies
-psutil>=5.9.0           # System and process utilities for session monitoring
+# ============================================================================
+# 🔥 CORE DEPENDENCIES (Always Required)
+# ============================================================================
+# These are essential for basic template functionality
+
+psutil>=5.9.0           # System monitoring and process management
 PyYAML>=6.0             # YAML configuration file parsing
 
-# Optional dependencies for enhanced features
-# (Install based on your needs)
+# ============================================================================
+# 🚀 RECOMMENDED DEPENDENCIES
+# ============================================================================
+# Install these for full research functionality
 
-# For advanced text processing (uncomment if needed)
-# nltk>=3.8              # Natural Language Toolkit for better keyword extraction
-# spacy>=3.4.0           # Advanced NLP library for entity recognition
+# Data Analysis & Visualization
+pandas>=2.0.0           # Data manipulation and analysis
+matplotlib>=3.7.0       # Plotting and data visualization  
+seaborn>=0.12.0         # Statistical data visualization
+numpy>=1.24.0           # Numerical computing foundation
 
-# For data analysis and visualization (uncomment if needed) 
-# pandas>=2.0.0          # Data manipulation and analysis
-# matplotlib>=3.7.0      # Plotting and visualization
-# seaborn>=0.12.0        # Statistical data visualization
+# Text Processing & NLP
+requests>=2.31.0        # HTTP requests for API calls
+beautifulsoup4>=4.12.0  # HTML/XML parsing for web scraping
 
-# For web-based log viewing (future enhancement)
-# flask>=2.3.0           # Web framework for log viewer web interface
+# ============================================================================
+# 🎯 ADVANCED FEATURES (Optional)
+# ============================================================================
+# Uncomment and install based on your research needs
+
+# Natural Language Processing
+# nltk>=3.8              # Natural Language Toolkit
+# spacy>=3.7.0           # Advanced NLP library
+# transformers>=4.30.0   # Hugging Face transformers for AI models
+
+# Machine Learning & AI
+# scikit-learn>=1.3.0    # Machine learning algorithms
+# torch>=2.0.0           # PyTorch for deep learning
+# tensorflow>=2.13.0     # TensorFlow for neural networks
+
+# Academic & Research APIs  
+# scholarly>=1.7.0       # Google Scholar API interface
+# arxiv>=1.4.0           # arXiv API for preprints
+# crossref-commons>=0.1  # Crossref API for academic metadata
+
+# Data Export & Formats
+# openpyxl>=3.1.0        # Excel file handling
+# python-docx>=0.8.11    # Word document generation
+# reportlab>=4.0.0       # PDF generation
+
+# Web Interface (for log viewing)
+# flask>=2.3.0           # Web framework
 # jinja2>=3.1.0          # Template engine
+# dash>=2.14.0           # Interactive web applications
 
-# For machine learning features (future enhancement)
-# scikit-learn>=1.3.0    # Machine learning library for pattern analysis
-# numpy>=1.24.0          # Numerical computing
+# ============================================================================
+# 🛠️ DEVELOPMENT DEPENDENCIES 
+# ============================================================================
+# Only needed if you're contributing to the template
 
-# Development dependencies (uncomment for development)
+# Code Quality & Testing
 # pytest>=7.4.0          # Testing framework
+# pytest-cov>=4.1.0      # Coverage reporting
 # black>=23.7.0          # Code formatter
-# flake8>=6.0.0          # Code linter
-# mypy>=1.5.0            # Static type checker
+# flake8>=6.0.0          # Code linting
+# mypy>=1.5.0            # Static type checking
+# pre-commit>=3.4.0      # Git hooks for code quality
 
-# Note: Most features work with Python standard library only!
-# Core functionality requires only psutil and PyYAML.
-# Other dependencies are optional for enhanced features.
+# Documentation
+# sphinx>=7.1.0          # Documentation generator
+# sphinx-rtd-theme>=1.3.0 # ReadTheDocs theme
+
+# ============================================================================
+# 📦 QUICK INSTALL COMMANDS
+# ============================================================================
+#
+# Minimal install (core features only):
+#   pip install psutil PyYAML
+#
+# Recommended install (full research features):
+#   pip install -r requirements.txt
+#
+# Development install (contributors):
+#   pip install -r requirements.txt
+#   pip install pytest black flake8 mypy pre-commit
+#
+# Custom install examples:
+#   # For data analysis focus:
+#   pip install pandas matplotlib seaborn numpy jupyter
+#   
+#   # For NLP research:
+#   pip install nltk spacy transformers
+#   
+#   # For machine learning:
+#   pip install scikit-learn torch tensorflow
+#
+# ============================================================================

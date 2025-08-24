@@ -1,0 +1,3 @@
+# Keep this directory in Git
+# This folder stores research data files (CSV, JSON, etc.)
+# Large files should use Git LFS - see .gitignore for size limits

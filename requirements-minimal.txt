@@ -1,0 +1,30 @@
+# ============================================================================
+# Claude Code Research Template - Minimal Dependencies
+# ============================================================================
+# This file contains only the essential dependencies for basic functionality
+# Install with: pip install -r requirements-minimal.txt
+
+# Core system utilities
+psutil>=5.9.0           # System monitoring and process management
+PyYAML>=6.0             # YAML configuration file parsing
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+#
+# This minimal install provides:
+# ✅ Basic template functionality
+# ✅ Log viewing and analytics
+# ✅ Configuration management
+# ✅ System monitoring
+#
+# Missing features with minimal install:
+# ❌ Data analysis and visualization
+# ❌ Advanced text processing
+# ❌ Web-based interfaces
+# ❌ Machine learning capabilities
+#
+# To upgrade to full features:
+#   pip install -r requirements.txt
+#
+# ============================================================================
