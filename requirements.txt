@@ -1,0 +1,36 @@
+# Claude Code Execution Logging System Dependencies
+# Python 3.9+ required
+
+# Core logging dependencies
+psutil>=5.9.0           # System and process utilities for session monitoring
+PyYAML>=6.0             # YAML configuration file parsing
+
+# Optional dependencies for enhanced features
+# (Install based on your needs)
+
+# For advanced text processing (uncomment if needed)
+# nltk>=3.8              # Natural Language Toolkit for better keyword extraction
+# spacy>=3.4.0           # Advanced NLP library for entity recognition
+
+# For data analysis and visualization (uncomment if needed) 
+# pandas>=2.0.0          # Data manipulation and analysis
+# matplotlib>=3.7.0      # Plotting and visualization
+# seaborn>=0.12.0        # Statistical data visualization
+
+# For web-based log viewing (future enhancement)
+# flask>=2.3.0           # Web framework for log viewer web interface
+# jinja2>=3.1.0          # Template engine
+
+# For machine learning features (future enhancement)
+# scikit-learn>=1.3.0    # Machine learning library for pattern analysis
+# numpy>=1.24.0          # Numerical computing
+
+# Development dependencies (uncomment for development)
+# pytest>=7.4.0          # Testing framework
+# black>=23.7.0          # Code formatter
+# flake8>=6.0.0          # Code linter
+# mypy>=1.5.0            # Static type checker
+
+# Note: Most features work with Python standard library only!
+# Core functionality requires only psutil and PyYAML.
+# Other dependencies are optional for enhanced features.
