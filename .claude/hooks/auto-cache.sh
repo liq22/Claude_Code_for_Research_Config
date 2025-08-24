@@ -6,7 +6,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-CACHE_SCRIPT="$PROJECT_DIR/scripts/cache/auto_cache_hook.py"
+CACHE_SCRIPT="$PROJECT_DIR/src/scripts/cache/auto_cache_hook.py"
 CACHE_PID_FILE="$PROJECT_DIR/dev/cache/cache.pid"
 
 # Function to start cache system

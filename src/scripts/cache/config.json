@@ -1,0 +1,100 @@
+{
+  "system": {
+    "auto_start": true,
+    "version": "1.0.0",
+    "last_updated": "2024-08-23"
+  },
+  "cache": {
+    "enabled_types": [
+      "thinking",
+      "research", 
+      "agent"
+    ],
+    "base_path": "dev/cache",
+    "compression": {
+      "enabled": true,
+      "algorithm": "gzip",
+      "level": 6
+    },
+    "retention": {
+      "thinking_days": 30,
+      "research_days": 90,
+      "agent_days": 60,
+      "cleanup_interval_hours": 24
+    },
+    "storage": {
+      "max_size_mb": 1000,
+      "backup_threshold_mb": 800,
+      "metadata_db": "metadata.db"
+    }
+  },
+  "capture": {
+    "thinking": {
+      "auto_capture": true,
+      "min_content_length": 10,
+      "capture_tools": true,
+      "capture_file_access": true
+    },
+    "research": {
+      "auto_capture": true,
+      "capture_discoveries": true,
+      "capture_queries": true,
+      "min_session_duration_seconds": 5
+    },
+    "agent": {
+      "auto_capture": true,
+      "capture_steps": true,
+      "capture_results": true,
+      "track_performance": true
+    }
+  },
+  "search": {
+    "semantic_search": {
+      "enabled": true,
+      "min_relevance_score": 0.3,
+      "max_results": 20
+    },
+    "pattern_matching": {
+      "enabled": true,
+      "similarity_threshold": 0.7
+    },
+    "indexing": {
+      "auto_index": true,
+      "index_interval_minutes": 10
+    }
+  },
+  "performance": {
+    "background_processing": true,
+    "max_queue_size": 1000,
+    "batch_size": 50,
+    "processing_threads": 2,
+    "metrics": {
+      "track_performance": true,
+      "report_interval_minutes": 60
+    }
+  },
+  "integration": {
+    "claude_code": {
+      "hook_enabled": true,
+      "hook_script": ".claude/hooks/auto-cache.sh",
+      "startup_delay_seconds": 2
+    },
+    "subagents": {
+      "cache_manager_enabled": true,
+      "auto_report_enabled": false
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "dev/cache/auto_cache.log",
+    "max_size_mb": 10,
+    "backup_count": 3,
+    "console_output": false
+  },
+  "security": {
+    "anonymize_sensitive": true,
+    "encrypt_research_data": false,
+    "access_control": false,
+    "private_mode": false
+  }
+}
