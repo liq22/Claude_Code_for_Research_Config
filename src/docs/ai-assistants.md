@@ -21,6 +21,9 @@
 ## 📚 研究发现助手 (7个)
 
 ### 1️⃣ 文献搜索分析助手
+📁 **Agent文件**: `.claude/agents/research-literature.md`
+🚀 **调用方式**: `/agent research-literature`
+
 **专业能力**: 智能文献搜索、相关性分析、质量评估
 
 **典型使用场景**:
@@ -53,6 +56,9 @@
 ```
 
 ### 2️⃣ 知识图谱构建助手
+📁 **Agent文件**: `.claude/agents/research-knowledge-graph.md`
+🚀 **调用方式**: `/agent research-knowledge-graph`
+
 **专业能力**: 领域知识关联、研究脉络分析、概念图构建
 
 **典型使用场景**:
@@ -88,6 +94,9 @@
 ```
 
 ### 3️⃣ 研究空白识别助手
+📁 **Agent文件**: `.claude/agents/research-gap-identifier.md`
+🚀 **调用方式**: `/agent research-gap-identifier`
+
 **专业能力**: 未研究领域发现、问题缺口分析、创新机会识别
 
 **典型使用场景**:
@@ -122,6 +131,9 @@
 ```
 
 ### 4️⃣ 假设生成助手
+📁 **Agent文件**: `.claude/agents/research-hypothesis.md`
+🚀 **调用方式**: `/agent research-hypothesis`
+
 **专业能力**: 科学假设构建、实验设计建议、理论推导
 
 **典型使用场景**:
@@ -149,6 +161,9 @@
 ```
 
 ### 5️⃣ 趋势分析助手
+📁 **Agent文件**: `.claude/agents/research-trends.md`
+🚀 **调用方式**: `/agent research-trends`
+
 **专业能力**: 发展趋势预测、热点识别、未来方向分析
 
 **典型使用场景**:
@@ -189,6 +204,9 @@
 ```
 
 ### 6️⃣ 学术数据库整合助手
+📁 **Agent文件**: `.claude/agents/research-academic.md`
+🚀 **调用方式**: `/agent research-academic`
+
 **专业能力**: 多数据库检索、格式统一、数据清洗
 
 **典型使用场景**:
@@ -211,6 +229,9 @@
 - 📊 **元数据丰富**: 补充影响因子、引用数等信息
 
 ### 7️⃣ 语义学者集成助手
+📁 **Agent文件**: `.claude/agents/research-semantic-scholar.md`
+🚀 **调用方式**: `/agent research-semantic-scholar`
+
 **专业能力**: 深度语义分析、相关性计算、智能推荐
 
 **典型使用场景**:
@@ -231,6 +252,9 @@
 ## ✍️ 论文写作助手 (8个)
 
 ### 1️⃣ 引言写作集群助手
+📁 **Agent文件**: `.claude/agents/writer-intro-cluster.md`
+🚀 **调用方式**: `/agent writer-intro-cluster`
+
 **专业能力**: 引言结构设计、背景叙述、问题引入、贡献总结
 
 **典型使用场景**:
@@ -256,6 +280,9 @@
 - 💡 **创新点**: 突出方法的新颖性和优势
 
 ### 2️⃣ 方法描述集群助手
+📁 **Agent文件**: `.claude/agents/writer-method-cluster.md`
+🚀 **调用方式**: `/agent writer-method-cluster`
+
 **专业能力**: 算法详述、数学建模、实现细节、复杂度分析
 
 **典型使用场景**:
@@ -281,6 +308,9 @@
 - 📊 **复杂度**: 理论和实际复杂度分析
 
 ### 3️⃣ 结果呈现集群助手
+📁 **Agent文件**: `.claude/agents/writer-results-cluster.md`
+🚀 **调用方式**: `/agent writer-results-cluster`
+
 **专业能力**: 实验设计、数据展示、图表制作、统计验证
 
 **典型使用场景**:
@@ -306,6 +336,9 @@
 - 📝 **说明文字**: 清晰完整的图表说明
 
 ### 4️⃣ 讨论分析集群助手
+📁 **Agent文件**: `.claude/agents/writer-discussion-cluster.md`
+🚀 **调用方式**: `/agent writer-discussion-cluster`
+
 **专业能力**: 结果解释、理论分析、局限讨论、未来展望
 
 **典型使用场景**:
@@ -331,6 +364,9 @@
 - 🌅 **未来展望**: 可能的发展方向
 
 ### 5️⃣ 格式优化集群助手
+📁 **Agent文件**: `.claude/agents/writer-format-cluster.md`
+🚀 **调用方式**: `/agent writer-format-cluster`
+
 **专业能力**: 摘要精炼、语言润色、期刊适配、声明制作
 
 **典型使用场景**:
@@ -356,6 +392,9 @@ ACM期刊: 系统完整，评估充分
 ```
 
 ### 6️⃣ 质量控制助手
+📁 **Agent文件**: `.claude/agents/writer-quality-controller.md`
+🚀 **调用方式**: `/agent writer-quality-controller`
+
 **专业能力**: 多维质量评估、Nature级别验证、改进建议
 
 **4重质量门控**:
@@ -375,7 +414,10 @@ B  (60-69):  一般期刊，基础研究
 C  (<60):    需要重大改进
 ```
 
-### 7️⃣ 样式格式化助手  
+### 7️⃣ 样式格式化助手
+📁 **Agent文件**: `.claude/agents/writer-style-formatter.md`
+🚀 **调用方式**: `/agent writer-style-formatter`
+
 **专业能力**: 自动格式调整、引文标准化、图表规范化
 
 **支持格式**:
@@ -385,6 +427,9 @@ C  (<60):    需要重大改进
 - 📋 **模板库**: 常用期刊的LaTeX和Word模板
 
 ### 8️⃣ 智能缓存助手
+📁 **Agent文件**: `.claude/agents/writer-cache-manager.md`
+🚀 **调用方式**: `/agent writer-cache-manager`
+
 **专业能力**: 成功模式学习、写作风格记忆、效率优化
 
 **学习能力**:
@@ -398,6 +443,9 @@ C  (<60):    需要重大改进
 ## 💻 技术开发助手 (3个)
 
 ### 1️⃣ 代码审查专家助手
+📁 **Agent文件**: `.claude/agents/coder-reviewer.md`
+🚀 **调用方式**: `/agent coder-reviewer`
+
 **专业能力**: 质量检查、安全审计、最佳实践建议、架构优化
 
 **典型使用场景**:
@@ -449,6 +497,9 @@ C  (<60):    需要重大改进
 ```
 
 ### 2️⃣ 调试诊断专家助手
+📁 **Agent文件**: `.claude/agents/coder-debugger.md`
+🚀 **调用方式**: `/agent coder-debugger`
+
 **专业能力**: 错误诊断、性能瓶颈分析、解决方案提供
 
 **典型使用场景**:
@@ -491,6 +542,9 @@ C  (<60):    需要重大改进
 ```
 
 ### 3️⃣ 工业AI部署助手
+📁 **Agent文件**: `.claude/agents/coder-industrial-ai.md`
+🚀 **调用方式**: `/agent coder-industrial-ai`
+
 **专业能力**: 模型优化、边缘部署、生产环境适配
 
 **典型使用场景**:
@@ -593,6 +647,65 @@ C  (<60):    需要重大改进
 - 🔄 **重复使用**: 80%用户会继续使用
 - 💬 **推荐意愿**: 90%用户愿意推荐
 - ⭐ **整体评价**: "显著提升研究效率"
+
+---
+
+## 📋 Agent文件快速索引
+
+### 📚 研究发现助手 (7个)
+
+| 助手名称 | Agent文件 | 调用方式 |
+|---------|-----------|----------|
+| 文献搜索分析助手 | `.claude/agents/research-literature.md` | `/agent research-literature` |
+| 知识图谱构建助手 | `.claude/agents/research-knowledge-graph.md` | `/agent research-knowledge-graph` |
+| 研究空白识别助手 | `.claude/agents/research-gap-identifier.md` | `/agent research-gap-identifier` |
+| 假设生成助手 | `.claude/agents/research-hypothesis.md` | `/agent research-hypothesis` |
+| 趋势分析助手 | `.claude/agents/research-trends.md` | `/agent research-trends` |
+| 学术数据库整合助手 | `.claude/agents/research-academic.md` | `/agent research-academic` |
+| 语义学者集成助手 | `.claude/agents/research-semantic-scholar.md` | `/agent research-semantic-scholar` |
+
+### ✍️ 论文写作助手 (8个)
+
+| 助手名称 | Agent文件 | 调用方式 |
+|---------|-----------|----------|
+| 引言写作集群助手 | `.claude/agents/writer-intro-cluster.md` | `/agent writer-intro-cluster` |
+| 方法描述集群助手 | `.claude/agents/writer-method-cluster.md` | `/agent writer-method-cluster` |
+| 结果呈现集群助手 | `.claude/agents/writer-results-cluster.md` | `/agent writer-results-cluster` |
+| 讨论分析集群助手 | `.claude/agents/writer-discussion-cluster.md` | `/agent writer-discussion-cluster` |
+| 格式优化集群助手 | `.claude/agents/writer-format-cluster.md` | `/agent writer-format-cluster` |
+| 质量控制助手 | `.claude/agents/writer-quality-controller.md` | `/agent writer-quality-controller` |
+| 样式格式化助手 | `.claude/agents/writer-style-formatter.md` | `/agent writer-style-formatter` |
+| 智能缓存助手 | `.claude/agents/writer-cache-manager.md` | `/agent writer-cache-manager` |
+
+### 💻 技术开发助手 (3个)
+
+| 助手名称 | Agent文件 | 调用方式 |
+|---------|-----------|----------|
+| 代码审查专家助手 | `.claude/agents/coder-reviewer.md` | `/agent coder-reviewer` |
+| 调试诊断专家助手 | `.claude/agents/coder-debugger.md` | `/agent coder-debugger` |
+| 工业AI部署助手 | `.claude/agents/coder-industrial-ai.md` | `/agent coder-industrial-ai` |
+
+## 💡 使用指南
+
+### 快速调用示例
+```bash
+# 文献研究工作流
+/agent research-literature: "搜索transformer优化相关论文"
+/agent research-knowledge-graph: "构建深度学习知识图谱"
+
+# 论文写作工作流  
+/agent writer-intro-cluster: "为AI安全论文写引言"
+/agent writer-quality-controller: "评估论文质量"
+
+# 代码开发工作流
+/agent coder-industrial-ai: "优化PyTorch模型部署"
+/agent coder-reviewer: "审查代码质量"
+```
+
+### 组合使用策略
+- **完整研究项目**: Research类 → Writer类 → Coder类
+- **快速文献调研**: research-literature → research-trends
+- **论文质量提升**: writer-quality-controller → writer-style-formatter
 
 ---
 
