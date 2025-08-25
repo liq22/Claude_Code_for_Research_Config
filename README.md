@@ -36,6 +36,8 @@ git clone https://github.com/[你的用户名]/claude-research-template
 - **"分析这些实验数据并生成结果部分"**  
 - **"改进我的论文引言，使其更有吸引力"**
 
+> 📖 **新用户？** 查看详细的 [设置指南](src/docs/SETUP.md) 了解完整的安装和配置步骤
+
 ## 📖 常见使用场景
 
 ### 场景1：从零开始写论文
@@ -124,6 +126,7 @@ Claude: [统计分析、可视化、结果写作]
 
 ## 📚 了解更多
 
+- **🚀 新用户设置指南** - 查看 [src/docs/SETUP.md](src/docs/SETUP.md) **← 从这里开始！**
 - **📖 详细使用教程** - 查看 [src/docs/CLAUDE.md](src/docs/CLAUDE.md)
 - **🎯 快速开始指南** - 查看 [src/docs/QUICKSTART.md](src/docs/QUICKSTART.md)  
 - **💡 示例论文模板** - 查看 [src/examples/](src/examples/) 目录
