@@ -20,6 +20,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent.parent
 sys.path.append(str(project_root / "scripts" / "logging"))
 sys.path.append(str(project_root / "scripts" / "agent_management"))
+sys.path.append(str(project_root / "src" / "scripts" / "cache"))
 
 try:
     from claude_logger import end_logging_session, log_response, log_tool_usage, log_agent_invocation, log_file_access
@@ -36,6 +37,13 @@ try:
 except ImportError as e:
     print(f"Warning: Agent management system not available: {e}", file=sys.stderr)
     AGENT_MANAGEMENT_AVAILABLE = False
+
+try:
+    from auto_hook import get_simple_auto_hook, cache_thinking, cache_agent, cache_research
+    CACHE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Cache system not available: {e}", file=sys.stderr)
+    CACHE_AVAILABLE = False
 
 def capture_execution_end(success: bool = True, error_message: str = None, response: str = None, context: dict = None):
     """
@@ -158,6 +166,55 @@ def capture_execution_end(success: bool = True, error_message: str = None, respo
                 
             except Exception as e:
                 print(f"Agent management processing error: {e}", file=sys.stderr)
+        
+        # Cache execution results if available
+        if CACHE_AVAILABLE:
+            try:
+                # Cache final thinking/results
+                thinking_content = f"Post-execution results:\n"
+                thinking_content += f"- Success: {success}\n"
+                thinking_content += f"- Execution time: {execution_time:.2f}s\n"
+                if response:
+                    thinking_content += f"- Response preview: {response[:500]}...\n"
+                if error_message:
+                    thinking_content += f"- Error: {error_message}\n"
+                
+                cache_path = cache_thinking(
+                    user_query,
+                    thinking_content,
+                    ["post-execute-hook", "completion", "results"]
+                )
+                if cache_path:
+                    print(f"💾 Final results cached: {Path(cache_path).name}", file=sys.stderr)
+                
+                # Cache agent completion if agent was used
+                if agent_name:
+                    agent_cache_path = cache_agent(
+                        agent_name,
+                        {
+                            "user_query": user_query,
+                            "execution_result": response or "Execution completed",
+                            "context": context or {},
+                            "success": success,
+                            "error_message": error_message
+                        },
+                        [
+                            {"step": "post-execution", "timestamp": datetime.now().isoformat()},
+                            {"step": "completion", "success": success, "execution_time": execution_time}
+                        ],
+                        {
+                            "status": "completed" if success else "failed",
+                            "result": response or "Execution completed",
+                            "execution_time": execution_time,
+                            "performance_metrics": locals().get('performance_metrics', {}),
+                            "summary_id": summary_id
+                        }
+                    )
+                    if agent_cache_path:
+                        print(f"🤖 Agent completion cached: {Path(agent_cache_path).name}", file=sys.stderr)
+                        
+            except Exception as e:
+                print(f"Warning: Failed to cache execution results: {e}", file=sys.stderr)
         
         # Clean up session file
         session_file.unlink(missing_ok=True)

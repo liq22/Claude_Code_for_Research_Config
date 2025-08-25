@@ -20,6 +20,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent.parent
 sys.path.append(str(project_root / "scripts" / "logging"))
 sys.path.append(str(project_root / "scripts" / "agent_management"))
+sys.path.append(str(project_root / "src" / "scripts" / "cache"))
 
 try:
     from claude_logger import start_logging_session, log_tool_usage
@@ -35,6 +36,13 @@ try:
 except ImportError as e:
     print(f"Warning: Agent management system not available: {e}", file=sys.stderr)
     AGENT_MANAGEMENT_AVAILABLE = False
+
+try:
+    from auto_hook import get_simple_auto_hook, cache_thinking
+    CACHE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Cache system not available: {e}", file=sys.stderr)
+    CACHE_AVAILABLE = False
 
 def capture_execution_start(user_input: str = None, context: dict = None):
     """
@@ -72,12 +80,40 @@ def capture_execution_start(user_input: str = None, context: dict = None):
         if LOGGING_AVAILABLE:
             session_id = start_logging_session(user_query)
         
+        # Cache the thinking process if available
+        if CACHE_AVAILABLE and user_query:
+            try:
+                cache_path = cache_thinking(
+                    user_query, 
+                    "Pre-execution: User query captured", 
+                    ["pre-execute-hook"]
+                )
+                if cache_path:
+                    print(f"🧠 Thinking cached: {Path(cache_path).name}", file=sys.stderr)
+            except Exception as e:
+                print(f"Warning: Failed to cache thinking: {e}", file=sys.stderr)
+        
         # Detect agent usage and capture task if available
         if AGENT_MANAGEMENT_AVAILABLE:
             agent_name = detect_agent_usage(user_query)
             if agent_name:
                 task_tracker = TaskTracker()
                 task_id = task_tracker.capture_task(agent_name, user_query, context)
+                
+                # Cache agent execution start if available
+                if CACHE_AVAILABLE:
+                    try:
+                        from auto_hook import cache_agent
+                        agent_cache_path = cache_agent(
+                            agent_name,
+                            {"user_query": user_query, "context": context},
+                            [{"step": "pre-execution", "timestamp": datetime.now().isoformat()}],
+                            {"status": "started", "task_id": task_id}
+                        )
+                        if agent_cache_path:
+                            print(f"🤖 Agent execution cached: {Path(agent_cache_path).name}", file=sys.stderr)
+                    except Exception as e:
+                        print(f"Warning: Failed to cache agent execution: {e}", file=sys.stderr)
         
         # Store session ID and task info for post-execute hook
         session_file = Path.home() / ".claude" / "current_session.json"

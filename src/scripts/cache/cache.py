@@ -13,7 +13,7 @@ import json
 import uuid
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 import logging
 
 # Configure logging
@@ -50,10 +50,17 @@ class SimpleCacheSystem:
         return f"{safe_timestamp}_{cache_type}.json"
 
     def _save_cache_file(self, cache_data: Dict[str, Any], file_path: Path) -> bool:
-        """Save cache data to file"""
+        """Save cache data to file with improved formatting"""
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(cache_data, f, ensure_ascii=False, indent=2)
+                json.dump(
+                    cache_data, 
+                    f, 
+                    ensure_ascii=False,  # Keep Unicode characters readable
+                    indent=2,
+                    separators=(',', ': '),  # Clean formatting
+                    sort_keys=False  # Preserve key order
+                )
             return True
         except Exception as e:
             logger.error(f"Failed to save cache file {file_path}: {e}")
@@ -106,6 +113,138 @@ class SimpleCacheSystem:
             logger.info(f"Cached agent execution: {filename}")
             return str(file_path)
         return None
+    
+    def cache_conversation(self, session_id: str, prompt: str, response: str, 
+                          tools_used: list = None, metadata: dict = None) -> Optional[str]:
+        """Cache complete conversation with prompt and response"""
+        timestamp = self._get_timestamp()
+        cache_data = {
+            "timestamp": timestamp,
+            "content": {
+                "type": "conversation",
+                "session_id": session_id,
+                "user_prompt": prompt,
+                "claude_response": response,
+                "tools_used": tools_used or [],
+                "metadata": metadata or {},
+                "conversation_length": len(prompt) + len(response)
+            }
+        }
+        
+        filename = self._get_filename(timestamp, "conversation")
+        file_path = self.thinking_path / filename  # Store in thinking for now
+        
+        if self._save_cache_file(cache_data, file_path):
+            logger.info(f"Cached conversation: {filename}")
+            return str(file_path)
+        return None
+    
+    def cache_tool_execution(self, tool_name: str, tool_input: dict, tool_output: dict,
+                           session_id: str = None, metadata: dict = None) -> Optional[str]:
+        """Cache tool execution details"""
+        timestamp = self._get_timestamp()
+        cache_data = {
+            "timestamp": timestamp,
+            "content": {
+                "type": "tool_execution",
+                "tool_name": tool_name,
+                "session_id": session_id,
+                "input_parameters": tool_input,
+                "output_data": tool_output,
+                "execution_time": timestamp,
+                "metadata": metadata or {}
+            }
+        }
+        
+        filename = self._get_filename(timestamp, "tool")
+        file_path = self.agent_path / filename  # Store tools in agent path
+        
+        if self._save_cache_file(cache_data, file_path):
+            logger.info(f"Cached tool execution: {tool_name} -> {filename}")
+            return str(file_path)
+        return None
+    
+    def find_by_session_id(self, session_id: str) -> List[dict]:
+        """Find all cache entries for a specific session"""
+        results = []
+        files = self.list_cache_files()
+        
+        for file_type, file_list in files.items():
+            cache_path = getattr(self, f"{file_type}_path")
+            
+            for filename in file_list:
+                file_path = cache_path / filename
+                cache_data = self.read_cache_file(file_path)
+                
+                if cache_data and 'content' in cache_data:
+                    content = cache_data['content']
+                    # Check if session_id matches
+                    if isinstance(content, dict) and content.get('session_id') == session_id:
+                        results.append({
+                            'file_path': str(file_path),
+                            'file_type': file_type,
+                            'timestamp': cache_data.get('timestamp'),
+                            'content': content
+                        })
+        
+        # Sort by timestamp
+        results.sort(key=lambda x: x['timestamp'])
+        return results
+    
+    def get_conversation_thread(self, session_id: str) -> dict:
+        """Get complete conversation thread for a session"""
+        session_data = self.find_by_session_id(session_id)
+        
+        thread = {
+            'session_id': session_id,
+            'messages': [],
+            'tools_used': [],
+            'metadata': {
+                'total_interactions': len(session_data),
+                'start_time': None,
+                'end_time': None
+            }
+        }
+        
+        for entry in session_data:
+            content = entry['content']
+            entry_type = content.get('type', 'unknown')
+            
+            if entry_type == 'user_prompt':
+                thread['messages'].append({
+                    'role': 'user',
+                    'content': content.get('prompt', ''),
+                    'timestamp': entry['timestamp']
+                })
+            elif entry_type in ['conversation', 'thinking']:
+                if 'claude_response' in content:
+                    thread['messages'].append({
+                        'role': 'assistant', 
+                        'content': content.get('claude_response', ''),
+                        'timestamp': entry['timestamp']
+                    })
+                elif 'thinking_content' in content:
+                    thread['messages'].append({
+                        'role': 'assistant',
+                        'content': content.get('thinking_content', ''),
+                        'timestamp': entry['timestamp'],
+                        'type': 'thinking'
+                    })
+            elif entry_type == 'tool_execution':
+                thread['tools_used'].append({
+                    'tool_name': content.get('tool_name', ''),
+                    'timestamp': entry['timestamp'],
+                    'input': content.get('input_parameters', {}),
+                    'output': content.get('output_data', {})
+                })
+            
+            # Update metadata
+            if not thread['metadata']['start_time'] or entry['timestamp'] < thread['metadata']['start_time']:
+                thread['metadata']['start_time'] = entry['timestamp']
+            if not thread['metadata']['end_time'] or entry['timestamp'] > thread['metadata']['end_time']:
+                thread['metadata']['end_time'] = entry['timestamp']
+        
+        return thread
 
     def read_cache_file(self, file_path: str) -> Optional[Dict[str, Any]]:
         """Read cache file"""
