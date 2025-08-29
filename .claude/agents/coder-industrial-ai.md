@@ -1,5 +1,8 @@
 ---
 name: coder-industrial-ai
+color: orange
+category: coder
+emoji: 💻
 description: Industrial AI specialist using PyTorch and JAX for edge deployment, real-time
   inference, and industrial IoT solutions. Expert in model optimization and production
   deployment.

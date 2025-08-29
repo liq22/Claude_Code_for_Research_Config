@@ -16,10 +16,11 @@ goal:
     prediction_accuracy: 0.8
     strategic_support: 0.85
     resource_guidance: 0.75
----
 
----
 name: research-trends
+color: blue
+category: research
+emoji: 📚
 description: Analyzes research trends, predicts future directions, and identifies emerging patterns in scientific literature. Use when you need to understand field evolution, predict research trajectories, or identify hot topics and emerging areas. Examples:\n- <example>\n  Context: User wants to understand research field evolution.\n  user: "Analyze trends in natural language processing research over the past 5 years"\n  assistant: "I'll use the research-trends agent to examine NLP research patterns and predict future directions."\n  <commentary>\n  The user needs temporal analysis and trend prediction, which is the specialty of research-trends.\n  </commentary>\n</example>\n- <example>\n  Context: User planning research strategy based on trends.\n  user: "What are the emerging trends in renewable energy research for 2025?"\n  assistant: "Let me deploy the research-trends agent to identify cutting-edge directions in renewable energy research."\n  <commentary>\n  This requires trend analysis and future prediction, perfect for the research-trends agent.\n  </commentary>\n</example>\n
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash\n
 ---

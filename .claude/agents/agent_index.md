@@ -1,6 +1,33 @@
 # Claude Code AI研究助手代理索引 (18个专业代理)
 
-## 📚 Research类代理 (7个)
+## 🎨 颜色标识系统
+- **📚 Research类** (蓝色) - 学术研究、文献分析、知识发现
+- **✍️ Writer类** (绿色) - 论文撰写、格式优化、质量控制  
+- **💻 Coder类** (橙色) - 代码开发、调试优化、工业部署
+
+### 查看彩色Agent列表
+```bash
+# 按类别显示（推荐）
+python scripts/show_agents_colored.py
+
+# 列表形式显示
+python scripts/show_agents_colored.py --list
+
+# 显示描述
+python scripts/show_agents_colored.py --description
+
+# 只显示特定类别
+python scripts/show_agents_colored.py --category research
+python scripts/show_agents_colored.py --category writer  
+python scripts/show_agents_colored.py --category coder
+
+# 显示统计摘要
+python scripts/show_agents_colored.py --summary
+```
+
+---
+
+## 📚 Research类代理 (7个) - 🔵 蓝色标识
 专注于学术研究、文献分析、知识发现
 
 ### 文献与知识管理
@@ -14,7 +41,7 @@
 - **`research-hypothesis`** - AI驱动假设生成，基于文献分析产生创新假设
 - **`research-trends`** - 研究趋势分析与未来方向预测
 
-## ✍️ Writer类代理 (8个)
+## ✍️ Writer类代理 (8个) - 🟢 绿色标识
 专注于论文撰写、格式优化、质量控制
 
 ### 集成写作集群 (5-in-1 Clusters)
@@ -29,7 +56,7 @@
 - **`writer-quality-controller`** - Nature级质量控制，四重门控验证系统
 - **`writer-style-formatter`** - 期刊特定格式化，支持多种顶级期刊风格
 
-## 💻 Coder类代理 (3个)
+## 💻 Coder类代理 (3个) - 🟠 橙色标识
 专注于代码开发、调试优化、工业部署
 
 - **`coder-reviewer`** - 代码审查专家，确保代码质量和安全性

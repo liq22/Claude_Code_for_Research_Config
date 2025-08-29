@@ -1,5 +1,8 @@
 ---
 name: coder-debugger
+color: orange
+category: coder
+emoji: 💻
 description: Debugging specialist for errors, test failures, and unexpected behavior.
   Use proactively when encountering any issues.
 tools: Read, Edit, Bash, Grep, Glob

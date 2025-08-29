@@ -16,10 +16,11 @@ goal:
     cache_hit_rate: 0.8
     pattern_recognition: 0.85
     learning_effectiveness: 0.8
----
 
----
 name: writer-cache-manager
+color: green
+category: writer
+emoji: ✍️
 description: Simple cache management for Claude thinking, research sessions, and agent executions. Stores only timestamp + content. Use for cache operations and simple searching. Examples:\n- <example>\n  Context: User wants to query cached research.\n  user: "Find cached research sessions about machine learning"\n  assistant: "I'll use the cache-manager agent to search cached research sessions with simple text matching."\n  <commentary>\n  Simple cache searching needed, perfect for cache-manager agent.\n  </commentary>\n</example>
 tools: Task, Bash, Read, Write, Edit, WebSearch
 ---

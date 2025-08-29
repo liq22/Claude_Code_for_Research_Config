@@ -16,10 +16,11 @@ goal:
     testability_rate: 0.8
     evidence_grounding: 0.9
     breakthrough_potential: 0.75
----
 
----
 name: research-hypothesis
+color: blue
+category: research
+emoji: 📚
 description: Generates novel research hypotheses by analyzing literature gaps, cross-domain patterns, and emerging trends. Use when you need creative research directions, testable hypotheses, or innovative research questions. Examples:\n- <example>\n  Context: User needs research hypotheses for grant proposal.\n  user: "Generate hypotheses for AI-assisted drug discovery research"\n  assistant: "I'll use the hypothesis-generator agent to analyze current research and propose novel, testable hypotheses."\n  <commentary>\n  The user needs creative, evidence-based hypotheses, which is exactly what the hypothesis-generator specializes in.\n  </commentary>\n</example>\n- <example>\n  Context: User wants to explore new research directions.\n  user: "What are some unexplored angles in quantum computing for optimization?"\n  assistant: "Let me deploy the hypothesis-generator to identify novel research opportunities in quantum optimization."\n  <commentary>\n  This requires identifying gaps and generating creative research directions, perfect for hypothesis-generator.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---

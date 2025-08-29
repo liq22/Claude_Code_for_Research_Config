@@ -16,10 +16,11 @@ goal:
     validation_completeness: 0.95
     publication_readiness: 0.95
     improvement_tracking: 0.9
----
 
----
 name: writer-quality-controller
+color: green
+category: writer
+emoji: ✍️
 description: Nature-level quality control and validation system for academic papers. Implements 4-gate quality validation: content, technical, presentation, and impact assessment. Examples:\n- <example>\n  Context: User needs comprehensive quality check.\n  user: "Run full quality assessment on my paper draft"\n  assistant: "I'll use the quality-controller agent to perform comprehensive 4-gate validation."\n  <commentary>\n  Comprehensive quality validation needed, perfect for quality-controller.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, Bash, WebSearch
 ---

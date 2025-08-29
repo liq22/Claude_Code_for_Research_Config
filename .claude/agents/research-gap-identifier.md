@@ -16,10 +16,11 @@ goal:
     impact_assessment: 0.85
     actionability: 0.8
     proposal_support: 0.85
----
 
----
 name: research-gap-identifier
+color: blue
+category: research
+emoji: 📚
 description: Systematically identifies research gaps, underexplored areas, and missing knowledge in scientific literature. Use when you need to find research opportunities, identify understudied problems, or discover knowledge gaps for new research directions. Examples:\n- <example>\n  Context: User planning new research project.\n  user: "What are the major research gaps in federated learning?"\n  assistant: "I'll use the research-gap-identifier agent to systematically analyze federated learning literature and identify key knowledge gaps."\n  <commentary>\n  The user needs systematic gap analysis, which is exactly what research-gap-identifier specializes in.\n  </commentary>\n</example>\n- <example>\n  Context: User writing grant proposal and needs to justify research novelty.\n  user: "Identify gaps in current approaches to explainable AI for healthcare"\n  assistant: "Let me deploy the research-gap-identifier to find specific gaps in explainable AI healthcare applications."\n  <commentary>\n  This requires systematic gap identification with domain focus, perfect for this agent.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---

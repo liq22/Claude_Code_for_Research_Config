@@ -16,10 +16,11 @@ goal:
     error_rate: 0.0
     conversion_speed: 0.9
     workflow_support: 0.85
----
 
----
 name: writer-style-formatter
+color: green
+category: writer
+emoji: ✍️
 description: Journal-specific style formatting and adaptation system. Supports Nature, Science, Computer Science, Life Sciences, and Physics formats with audience adaptation. Examples:\n- <example>\n  Context: User needs Nature format adaptation.\n  user: "Format my paper for Nature Machine Intelligence submission"\n  assistant: "I'll use the style-formatter agent to adapt your paper to Nature format requirements."\n  <commentary>\n  Journal-specific formatting needed, perfect for style-formatter.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, Bash
 ---

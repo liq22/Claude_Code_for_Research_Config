@@ -16,10 +16,11 @@ goal:
     connection_accuracy: 0.9
     insight_quality: 0.85
     strategy_support: 0.8
----
 
----
 name: research-knowledge-graph
+color: blue
+category: research
+emoji: 📚
 description: Constructs comprehensive knowledge graphs from research literature, integrating citation networks, cross-domain analysis, and semantic relationships. Use when you need to visualize research landscapes, identify knowledge connections, or perform network analysis. Examples:\n- <example>\n  Context: User wants to understand research domain structure.\n  user: "Build knowledge graph for quantum machine learning research"\n  assistant: "I'll use the knowledge-graph-builder agent to create a comprehensive research landscape visualization."\n  <commentary>\n  The user needs visual understanding of research domain connections, perfect for knowledge-graph-builder.\n  </commentary>\n</example>\n- <example>\n  Context: User seeks cross-domain connections.\n  user: "Find connections between neuroscience and AI research"\n  assistant: "Let me deploy the knowledge-graph-builder to map interdisciplinary connections and identify collaboration opportunities."\n  <commentary>\n  Cross-domain analysis and connection discovery are core capabilities of this agent.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash, Grep, Glob
 ---

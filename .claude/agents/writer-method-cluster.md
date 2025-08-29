@@ -16,10 +16,11 @@ goal:
     mathematical_accuracy: 0.98
     implementation_clarity: 0.9
     review_readiness: 0.85
----
 
----
 name: writer-method-cluster
+color: green
+category: writer
+emoji: ✍️
 description: Method writing cluster for technical methodology sections. Use --task parameter: overview (system architecture), algorithm (detailed algorithms), math (mathematical modeling), implementation (technical details), complexity (performance analysis). Examples:\n- <example>\n  Context: User needs system architecture description.\n  user: "/agent method-cluster --task overview: Describe multimodal learning architecture"\n  assistant: "I'll use method-cluster with overview task to create comprehensive system architecture description."\n  <commentary>\n  System overview needed, use method-cluster with --task overview.\n  </commentary>\n</example>
 tools: Task, Read, Write, Edit, MultiEdit, WebSearch, Bash
 ---
