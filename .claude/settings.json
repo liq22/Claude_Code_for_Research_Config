@@ -71,6 +71,12 @@
     "cache_optimization": true,
     "memory_management": "auto"
   },
+  "output_style": {
+    "enabled": true,
+    "style": "nature-expert-planner",
+    "path": ".claude/output-styles/nature-expert-planner.md",
+    "enforce_planning": true
+  },
   "hooks": {
     "UserPromptSubmit": [
       {
