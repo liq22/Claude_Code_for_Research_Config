@@ -7,6 +7,7 @@
 - **src/** - 系统源代码和资源（示例、模板、脚本）
 - **config/** - 配置文件（requirements、环境变量）
 - **.claude/** - Claude系统配置
+- **MPC** https://github.com/Pimzino/claude-code-spec-workflow
 
 ## ✨ 这是什么？
 
