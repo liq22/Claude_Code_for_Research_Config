@@ -9,6 +9,13 @@
 - **.claude/** - Claude系统配置
 - **MPC** https://github.com/Pimzino/claude-code-spec-workflow
 
+Install the workflow globally
+npm i -g @pimzino/claude-code-spec-workflow
+Run the setup command in your project directory
+claude-code-spec-workflow
+
+- **PHM_conference** git submodule add https://github.com/liq22/PHM_conference workspace/PHM_conference
+
 ## ✨ 这是什么？
 
 这是一个**Claude Code配置模板**，让您通过自然语言对话即可：
